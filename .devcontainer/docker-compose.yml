@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:alpine-xfce
+    container_name: webtop
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - TITLE=MyDesktop
+    volumes:
+      - webtop-config:/config
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    restart: unless-stopped
+
+volumes:
+  webtop-config:
