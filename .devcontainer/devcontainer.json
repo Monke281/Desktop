@@ -1,0 +1,14 @@
+{
+  "name": "Webtop XFCE",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "webtop",
+  "workspaceFolder": "/config",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Webtop Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
